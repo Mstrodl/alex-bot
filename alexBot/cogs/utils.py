@@ -34,6 +34,12 @@ class Utils(Cog):
         """You know it"""
         await ctx.send(f"Pong! time is {ctx.bot.latency * 1000:.2f} ms")
 
+    @commands.commands()
+    async def uptime(self, ctx):
+        """Gets uptime"""
+        time = time.time() - self.startup
+        await ctx.send(f"I've been up for {time}")
+        
     @commands.command()
     async def time(self,ctx):
         """Displays the time in alaska"""
